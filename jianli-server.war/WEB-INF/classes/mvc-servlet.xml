@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.1.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
+
+    <bean class="com.jl.platform.web.handlers.JLExceptionHandler"/>
+
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <property name="features">
+                    <array>
+                        <!-- List字段如果为null,输出为[],而非nul -->
+                        <value>WriteNullListAsEmpty</value>
+                        <!-- 字符类型字段如果为null,输出为”“,而非null -->
+                        <value>WriteNullStringAsEmpty</value>
+                        <!-- 进制循环引用 -->
+                        <value>DisableCircularReferenceDetect</value>
+                        <!--Boolean字段如果为null,输出为false,而非null -->
+                        <value>WriteNullBooleanAsFalse</value>
+                        <!--时间 yyyy.MM.dd hh:mm:ss -->
+                        <value type="com.alibaba.fastjson.serializer.SerializerFeature">WriteDateUseDateFormat</value>
+                    </array>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <context:component-scan base-package="com.jl.platform.web"/>
+
+</beans>
+
+
