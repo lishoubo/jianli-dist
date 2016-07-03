@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>崔工监理</title>
+    
+
+    <link href="//cdn.bootcss.com/normalize/4.1.1/normalize.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/2.2.3/jquery.js"></script>
+    
+<link href="/css/index.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row header">
+
+    <div class="col-md-2 col-md-offset-1">
+        <div class="logo">
+            <a href="/" title="装小蜜家装监理-管家式家装监理服务"><img src="/images/logo.png"/></a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="navbar">
+            <ul>
+                <li><a href="/pages/index/index.html">首页</a></li>
+                <li><a href="/pages/journal/journal.html">监理日志</a></li>
+                <li><a href="/pages/baike/baike.html">家装百科</a></li>
+                <li><a href="#about">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    //Loads the correct sidebar on window load,
+    //collapses the sidebar on window resize.
+    // Sets the min-height of #page-wrapper to window size
+    $(function () {
+        $(window).bind("load resize", function () {
+            var topOffset = 50;
+            var width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;
+            if (width < 768) {
+                $('div.navbar-collapse').addClass('collapse');
+                topOffset = 100; // 2-row-menu
+            } else {
+                $('div.navbar-collapse').removeClass('collapse');
+            }
+
+            var height = ((this.window.innerHeight > 0) ? this.window.innerHeight : this.screen.height) - 1;
+            height = height - topOffset;
+            if (height < 1) height = 1;
+            if (height > topOffset) {
+                $("#page-wrapper").css("min-height", (height) + "px");
+            }
+        });
+
+        var url = window.location;
+        $('.navbar a').filter(function () {
+            return this.href == url || url.href.indexOf(this.href) == 0;
+        }).addClass('active');
+    })
+</script>
+    
+<div id="quick_nav">
+    <ul>
+        <li>
+            <div class="weixin">
+                <img src="/images/weixin.png" class="icon"/>
+                <img src="/images/weixin.png" class="full-content non-visible"/>
+            </div>
+        </li>
+        <li>
+            <div class="qq">
+                <img src="/images/qq-offline.png" class="icon"/>
+            </div>
+        </li>
+        <li>
+            <div class="qq">
+                <img src="/images/qq-online.png" class="icon"/>
+            </div>
+        </li>
+
+
+
+    </ul>
+
+</div>
+
+<div class="row" style="height: 405px;">
+    <div class="col-md-12" style="padding: 0; position: relative">
+        <div id="banner-carousel" class="jl-carousel carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#banner-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#banner-carousel" data-slide-to="1"></li>
+        <li data-target="#banner-carousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+            <img src="/images/index-slider-01.png" alt="Chania" style="height: 405px;">
+        </div>
+
+        <div class="carousel-item">
+            <img src="/images/index-slider-02.png" alt="Flower" style="height: 405px;">
+        </div>
+
+        <div class="carousel-item">
+            <img src="/images/index-slider-03.png" alt="Flower" style="height: 405px;">
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#banner-carousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#banner-carousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+        <div id="quick_join">
+    <h6>快速预约监理</h6>
+    <img src="/images/hr-line.png" style="width: 100%; margin: 10px 0 0 0">
+    <div style="padding: 6px 12px; text-align: left">
+        <p><span>无需注册,立即报名</span></p>
+        <p><span>已有<span class="big">{{applyNum}}</span>位用户报名</span></p>
+        <input type="text" class="form-control quick-join-item" v-model="applyForm.area" placeholder="房屋面积(平方米)">
+        <div class="input-group quick-join-item">
+            <input type="text" class="form-control" v-model="applyForm.address" placeholder="小区地址">
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">{{applyForm.district}} <span
+                        class="caret"></span></button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><p v-on:click="choose_district">余杭区</p></li>
+                    <li><p v-on:click="choose_district">拱墅区</p></li>
+                    <li><p v-on:click="choose_district">滨江区</p></li>
+                    <li><p v-on:click="choose_district">上城区</p></li>
+                    <li><p v-on:click="choose_district">下城区</p></li>
+                </ul>
+            </div>
+        </div>
+        <input type="text" class="form-control quick-join-item" v-model="applyForm.userName" placeholder="您的姓名">
+        <input type="text" class="form-control quick-join-item" v-model="applyForm.mobile" placeholder="手机号">
+        <button class="btn btn-default form-control quick-join-item" style="background-color: darkgray"
+                v-on:click="quick_join">马上预约
+        </button>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="row jl-service-intro" style="height: 500px; background-color: white;padding-top: 60px">
+    <div class="col-md-5 col-md-offset-1">
+        <article>
+            <div class="i-title">
+                <span>您信任的监理 / </span><a href="/pages/about/about.html">崔工监理服务介绍</a>
+            </div>
+            <p>
+                “崔工监理”开创互联网家装监理服务理念，用专业角度帮助业主处理装修中的相关事宜，对装修工程进行全方位的监理，通过装崔工积累的项目管理经验和行业资源，让您省钱、省心，省力的实现高质量的装修。
+            </p>
+            <p>
+                互联网家装监理不同于传统的监理服务，传统监理只负责工程质量的验收，装小蜜更关注装修的整体方案，除了监理工程质量之外，还协助您筛选施工方，审核图纸预算，跟踪工程进度等，站在您的角度，从源头把控，全方位维护您利益
+            </p>
+        </article>
+    </div>
+    <div class="col-md-6">
+        <section>
+            <img src="/images/service-intro-01.png"/>
+        </section>
+    </div>
+</div>
+<div class="row" style="height: 526px;padding-top: 40px;background-color: #656565">
+    <div class="col-md-12">
+        <h3 style="color: white; width:175px;display: block;margin: 0 auto;">监理服务流程</h3>
+    </div>
+    <div class="col-md-11 col-md-offset-1" style="margin:60px 120px 40px 120px">
+        <div class="jl-process">
+    <ul>
+        <li>
+            <div class="jl-process-item">
+                <div class="jl-process-item-img">
+                    <img src="/images/jl-process-01.jpg"/>
+                </div>
+                <div class="jl-process-item-title">
+                    <h6>前期审核</h6>
+                </div>
+                <div class="jl-process-item-detail">
+                    <p>收费单价审核</p>
+                    <p>合同审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="jl-process-seperator">
+                . . .
+            </div>
+        </li>
+        <li>
+            <div class="jl-process-item">
+                <div class="jl-process-item-img">
+                    <img src="/images/jl-process-01.jpg"/>
+                </div>
+                <div class="jl-process-item-title">
+                    <h6>水电阶段</h6>
+                </div>
+                <div class="jl-process-item-detail">
+                    <p>收费单价审核</p>
+                    <p>合同审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="jl-process-seperator">
+                . . .
+            </div>
+        </li>
+        <li>
+            <div class="jl-process-item">
+                <div class="jl-process-item-img">
+                    <img src="/images/jl-process-01.jpg"/>
+                </div>
+                <div class="jl-process-item-title">
+                    <h6>泥工验收</h6>
+                </div>
+                <div class="jl-process-item-detail">
+                    <p>收费单价审核</p>
+                    <p>合同审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="jl-process-seperator">
+                . . .
+            </div>
+        </li>
+        <li>
+            <div class="jl-process-item">
+                <div class="jl-process-item-img">
+                    <img src="/images/jl-process-01.jpg"/>
+                </div>
+                <div class="jl-process-item-title">
+                    <h6>木工验收</h6>
+                </div>
+                <div class="jl-process-item-detail">
+                    <p>收费单价审核</p>
+                    <p>合同审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="jl-process-seperator">
+                . . .
+            </div>
+        </li>
+        <li>
+            <div class="jl-process-item">
+                <div class="jl-process-item-img">
+                    <img src="/images/jl-process-01.jpg"/>
+                </div>
+                <div class="jl-process-item-title">
+                    <h6>油漆粉刷</h6>
+                </div>
+                <div class="jl-process-item-detail">
+                    <p>收费单价审核</p>
+                    <p>合同审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="jl-process-seperator">
+                . . .
+            </div>
+        </li>
+        <li>
+            <div class="jl-process-item">
+                <div class="jl-process-item-img">
+                    <img src="/images/jl-process-01.jpg"/>
+                </div>
+                <div class="jl-process-item-title">
+                    <h6>竣工验收</h6>
+                </div>
+                <div class="jl-process-item-detail">
+                    <p>收费单价审核</p>
+                    <p>合同审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                    <p>责任审核</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+    </div>
+</div>
+
+<div class="row" style="height: 760px; padding-top: 40px;background-color: white;">
+    <div class="col-md-12">
+        <div style="text-align: center">
+            <div>
+                <img src="/images/line-01.png" style="padding-top:14px;vertical-align: top">
+                <h3 style="display:inline;position: relative; padding: 10px">经典监理案例</h3>
+                <img src="/images/line-01.png" style="padding-top:14px;vertical-align: top">
+            </div>
+            <div>
+                <p style="margin-top: 20px; color: #aaaaaa">展示我们的现场监理工作</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-11 col-md-offset-1" style="margin-top: 30px">
+        <div class="jl-example">
+    <ul>
+        <li>
+            <div class="jl-example-item">
+                <img src="/images/u412.png"/>
+                <div class="jl-engineer-container">
+                    <img class="jl-engineer-pic" src="/images/user-logo.jpg"/>
+                    <p>
+                        <span style="font-size: 90%">王建国</span>
+                    </p>
+                </div>
+                <div class="jl-client-house">
+                    <span>西湖区</span>
+                    <span>117平凡</span>
+                    <span>3居室</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="jl-example-item">
+                <img src="/images/u414.png"/>
+                <div class="jl-engineer-container">
+                    <img class="jl-engineer-pic" src="/images/user-logo.jpg"/>
+                    <p>
+                        <span style="font-size: 90%">王建国</span>
+                    </p>
+                </div>
+                <div class="jl-client-house">
+                    <span>西湖区</span>
+                    <span>117平凡</span>
+                    <span>3居室</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="jl-example-item">
+                <img src="/images/u418.png"/>
+                <div class="jl-engineer-container">
+                    <img class="jl-engineer-pic" src="/images/user-logo.jpg"/>
+                    <p>
+                        <span style="font-size: 90%">王建国</span>
+                    </p>
+                </div>
+                <div class="jl-client-house">
+                    <span>西湖区</span>
+                    <span>117平凡</span>
+                    <span>3居室</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="jl-example-item">
+                <img src="/images/u420.png"/>
+                <div class="jl-engineer-container">
+                    <img class="jl-engineer-pic" src="/images/user-logo.jpg"/>
+                    <p>
+                        <span style="font-size: 90%">王建国</span>
+                    </p>
+                </div>
+                <div class="jl-client-house">
+                    <span>西湖区</span>
+                    <span>117平凡</span>
+                    <span>3居室</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="jl-example-item">
+                <img src="/images/u424.png"/>
+                <div class="jl-engineer-container">
+                    <img class="jl-engineer-pic" src="/images/user-logo.jpg"/>
+                    <p>
+                        <span style="font-size: 90%">王建国</span>
+                    </p>
+                </div>
+                <div class="jl-client-house">
+                    <span>西湖区</span>
+                    <span>117平凡</span>
+                    <span>3居室</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="jl-example-item">
+                <img src="/images/u426.png"/>
+                <div class="jl-engineer-container">
+                    <img class="jl-engineer-pic" src="/images/user-logo.jpg"/>
+                    <p>
+                        <span style="font-size: 90%">王建国</span>
+                    </p>
+                </div>
+                <div class="jl-client-house">
+                    <span>西湖区</span>
+                    <span>117平凡</span>
+                    <span>3居室</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="jl-example-item">
+                <img src="/images/u430.png"/>
+                <div class="jl-engineer-container">
+                    <img class="jl-engineer-pic" src="/images/user-logo.jpg"/>
+                    <p>
+                        <span style="font-size: 90%">王建国</span>
+                    </p>
+                </div>
+                <div class="jl-client-house">
+                    <span>西湖区</span>
+                    <span>117平凡</span>
+                    <span>3居室</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="jl-example-item">
+                <img src="/images/u432.png"/>
+                <div class="jl-engineer-container">
+                    <img class="jl-engineer-pic" src="/images/user-logo.jpg"/>
+                    <p>
+                        <span style="font-size: 90%">王建国</span>
+                    </p>
+                </div>
+                <div class="jl-client-house">
+                    <span>西湖区</span>
+                    <span>117平凡</span>
+                    <span>3居室</span>
+                </div>
+            </div>
+        </li>
+</div>
+    </div>
+</div>
+
+<div class="row" style="height: 460px; background-color: white; padding-top: 40px">
+    <div class="col-md-12">
+        <div style="text-align: center">
+            <div>
+                <img src="/images/line-01.png" style="padding-top:14px;vertical-align: top">
+                <h3 style="display:inline;position: relative; padding: 10px">家装百科</h3>
+                <img src="/images/line-01.png" style="padding-top:14px;vertical-align: top">
+            </div>
+            <div>
+                <p style="margin-top: 20px; color: #aaaaaa">崔工教你不同阶段装修注意事项</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-11 col-md-offset-1" style="margin-top: 20px">
+        <div class="jl-baike">
+    <ul>
+        <li>
+            <div class="jl-baike-item">
+                <div class="jl-baike-icon-container">
+                    <img src="/images/icon-baike-01.png" style="width: 35px; height: 35px">
+                    <p style="padding: 10px 0 0 0">
+                        <span style="font-size: x-small">前期准备</span>
+                    </p>
+                </div>
+                <div class="jl-baike-content-container">
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><a href="#">更多内容</a></p>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="jl-baike-item">
+                <div class="jl-baike-icon-container">
+                    <img src="/images/icon-baike-01.png" style="width: 35px; height: 35px">
+                    <p style="padding: 10px 0 0 0">
+                        <span style="font-size: x-small">水电验收</span>
+                    </p>
+                </div>
+                <div class="jl-baike-content-container">
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><a href="#">更多内容</a></p>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="jl-baike-item">
+                <div class="jl-baike-icon-container">
+                    <img src="/images/icon-baike-01.png" style="width: 35px; height: 35px">
+                    <p style="padding: 10px 0 0 0">
+                        <span style="font-size: x-small">木工验收</span>
+                    </p>
+                </div>
+                <div class="jl-baike-content-container">
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><a href="#">更多内容</a></p>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="jl-baike-item">
+                <div class="jl-baike-icon-container">
+                    <img src="/images/icon-baike-01.png" style="width: 35px; height: 35px">
+                    <p style="padding: 10px 0 0 0">
+                        <span style="font-size: x-small">油漆验收</span>
+                    </p>
+                </div>
+                <div class="jl-baike-content-container">
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><a href="#">更多内容</a></p>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="jl-baike-item">
+                <div class="jl-baike-icon-container">
+                    <img src="/images/icon-baike-01.png" style="width: 35px; height: 35px">
+                    <p style="padding: 10px 0 0 0">
+                        <span style="font-size: x-small">空气质量</span>
+                    </p>
+                </div>
+                <div class="jl-baike-content-container">
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><a href="#">更多内容></a></p>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="jl-baike-item">
+                <div class="jl-baike-icon-container">
+                    <img src="/images/icon-baike-01.png" style="width: 35px; height: 35px">
+                    <p style="padding: 10px 0 0 0">
+                        <span style="font-size: x-small">竣工验收</span>
+                    </p>
+                </div>
+                <div class="jl-baike-content-container">
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><span>[前期]&nbsp世上最牛装修流程图装修流程图</span></p>
+                    <p><a href="#">更多内容</a></p>
+                </div>
+            </div>
+        </li>
+
+</div>
+    </div>
+</div>
+
+<div class="row" style="height: 460px; background-color: #656565;">
+    <div class="col-md-12">
+        <div class="jl-team-top text-center" >
+            <div class="jl-team-top-img">
+                <img src="/images/u548.png">
+            </div>
+            <p>专业监理团队</p>
+        </div>
+    </div>
+    <div class="col-md-11 col-md-offset-1">
+        <div class="jl-team">
+    <ul>
+        <li>
+            <div class="jl-team-item">
+                <img class="il-team-round" src="/images/u552.png"/>
+                <div class="jl-team-content">
+                    <h6 class="name">王健国</h6>
+                    <p>资历:10年</p>
+                </div>
+            </div>
+
+        </li>
+        <li>
+            <div class="jl-team-item">
+                <img class="il-team-round" src="/images/u552.png"/>
+                <div class="jl-team-content">
+                    <h6 class="name">王健国</h6>
+                    <p>资历:10年</p>
+                </div>
+            </div>
+
+        </li>
+
+        <li>
+            <div class="jl-team-item">
+                <img class="il-team-round" src="/images/u556.png"/>
+                <div class="jl-team-content">
+                    <h6 class="name">王健国</h6>
+                    <p>资历:10年</p>
+                </div>
+            </div>
+
+        </li>
+        <li>
+            <div class="jl-team-item">
+                <img class="il-team-round" src="/images/u560.png"/>
+                <div class="jl-team-content">
+                    <h6 class="name">王健国</h6>
+                    <p>资历:10年</p>
+                </div>
+            </div>
+
+        </li>
+        <li>
+            <div class="jl-team-item">
+                <img class="il-team-round" src="/images/u552.png"/>
+                <div class="jl-team-content">
+                    <h6 class="name">王健国</h6>
+                    <p>资历:10年</p>
+                </div>
+            </div>
+
+        </li>
+    </ul>
+</div>
+    </div>
+    <div class="col-md-12">
+        <div class="jl-team-campany-honor">
+            <label>LOGO 互联网监理</label>
+            <label class="with-border">互联网建筑协会会员</label>
+            <label>家装百强企业</label>
+
+        </div>
+    </div>
+</div>
+
+
+    <div class="row footer">
+    <div>
+        <label>邮箱</label>
+        <span>cuigongjianli@163.com</span>
+    </div>
+    <div>
+        <label>电话</label>
+        <span>0571-845617</span>
+    </div>
+    <div>
+        <label>QQ</label>
+        <span>1051870530</span>
+    </div>
+    <div>
+        <label>地址</label>
+        <span>拱墅区祥园路38号浙报印务中心308室</span>
+    </div>
+    <div>
+        Copyright ©2012 崔工验房. 浙ICP备15018361号
+    </div>
+</div>
+</div>
+
+
+<script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/bootbox.js/4.4.0/bootbox.js"></script>
+<script src="//cdn.bootcss.com/vue/1.0.24/vue.min.js"></script>
+<script>
+    Vue.mixin({
+        methods: {
+            _api_host: function () {
+                return "http://localhost:8080";
+            },
+            _post: function (api, data, success_callback, error_callback) {
+                var self = this;
+                $.ajax({
+                    method: 'post',
+                    url: self._api_host() + api,
+                    data: data,
+                    success: success_callback,
+                    error: error_callback
+                })
+            },
+            _get: function (api, data, success_callback, error_callback) {
+                var self = this;
+                $.ajax({
+                    method: 'get',
+                    url: self._api_host() + api,
+                    data: data,
+                    success: success_callback,
+                    error: error_callback
+                })
+            }
+
+        }
+    });
+    function show_tip(message) {
+        bootbox.dialog({
+            message: message,
+            title: "提示",
+            animate: true,
+            buttons: {
+                success: {
+                    label: "好的",
+                    className: "btn-success"
+                }
+            }
+        });
+
+    }
+</script>
+
+<script src="/js/index.js"></script>
+
+</body>
+</html>

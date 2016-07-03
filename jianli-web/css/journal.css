@@ -1,0 +1,202 @@
+ul {
+  list-style: none;
+}
+body {
+  line-height: 1;
+  color: #000;
+  font-family: Microsoft YaHei UIRegular, Microsoft YaHei, sans-serif, Arial, '宋体';
+}
+.horizontal-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.horizontal-list li {
+  float: left;
+  margin: 5px;
+}
+.hide {
+  display: none;
+}
+.non-visible {
+  visibility: hidden;
+}
+.header {
+  background: #000;
+  height: 50px;
+}
+.navbar {
+  padding: 0;
+  margin-left: 100px;
+}
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+.navbar li {
+  float: left;
+}
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+.navbar .active {
+  border-bottom: 2px ghostwhite solid;
+}
+.logo {
+  margin-left: 40px;
+  height: 50px;
+  padding-top: 14px;
+}
+.logo img {
+  width: 83px;
+  height: 20px;
+}
+/*百科list页面筛选项*/
+.jl-journal-filter {
+  position: relative;
+  font-size: small;
+  text-align: center;
+  text-align: left;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid grey;
+}
+.jl-journal-filter .btn-group {
+  border-right: 1px solid grey;
+}
+.jl-journal-filter .btn-group:last-child {
+  border: 0;
+}
+.jl-journal-filter label {
+  position: relative;
+  float: left;
+  display: inline-block;
+  padding: .25rem .3rem;
+  margin: 0px;
+  color: darkgray;
+  line-height: 1.0;
+}
+.jl-journal-filter button {
+  color: black;
+  background-color: white;
+  line-height: .5;
+  font-size: small;
+  padding: .4rem .7rem;
+}
+.jl-journal-filter .dropdown-menu {
+  color: black;
+  width: 100px;
+  font-size: small;
+  line-height: 150%;
+  position: absolute;
+  text-align: right;
+  padding: 10px;
+}
+.jl-journal-filter .dropdown-menu a {
+  color: black;
+}
+/*baike list的每一个item*/
+.jl-journal-list-item {
+  height: 320px;
+}
+.jl-journal-list-item-employer {
+  text-align: center;
+  font-size: small;
+  padding: 0 5px;
+}
+.jl-journal-list-item-employer p {
+  margin: 10px 0;
+}
+.jl-journal-list-item-detail {
+  background-color: lightgray;
+  padding: 0;
+  font-size: small;
+  margin-left: 10px;
+  width: 90%;
+}
+.jl-journal-list-item-detail:before {
+  width: 0;
+  height: 0;
+  border-width: 0px 16px 16px 0;
+  border-style: solid;
+  border-color: transparent lightgray transparent transparent;
+  /*透明 灰 透明 透明 */
+  margin: 0px -16px;
+  display: block;
+  position: absolute;
+  content: '';
+}
+.jl-journal-list-item-detail p {
+  padding: 0;
+  margin: 0;
+  height: 50px;
+  line-height: 130%;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  /*截断文字，显示省略号(...)*/
+  -o-text-overflow: ellipsis;
+  /*Opera的专用截断文字的属性*/
+  text-align: justify;
+}
+.jl-journal-list-item-detail img {
+  width: 135px;
+  height: 135px;
+  padding: 5px;
+}
+.jl-journal-list-item-footer {
+  background-color: grey;
+  padding: 20px 25px;
+  height: 50px;
+}
+.jl-journal-list-item-footer label {
+  border-right: 1px solid white;
+  padding: 0 20px;
+  color: white;
+}
+.jl-journal-list-item-footer label:last-child {
+  border: 0;
+  float: right;
+}
+/*热门百科*/
+.jl-recommend-journal-list {
+  padding-right: 0;
+}
+.jl-recommend-journal-list ul {
+  padding: 0;
+}
+.jl-recommend-journal-item {
+  height: 60px;
+  width: 100%;
+  padding-right: 6px;
+  margin-bottom: 10px;
+  background-color: lightgray;
+}
+.jl-recommend-journal-item-middle {
+  display: inline-block;
+  padding: 10px 10px;
+  font-size: smaller;
+  line-height: 80%;
+}
+.jl-recommend-journal-item img {
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  vertical-align: top;
+}
+.jl-recommend-journal-item a {
+  float: right;
+  color: #222222;
+  margin-top: 15px;
+}
+.jl-recommend-journal-item a i {
+  font-size: 25px;
+  vertical-align: middle;
+}

@@ -1,0 +1,55 @@
+.jl-example {
+  padding: 0;
+  margin: 0;
+}
+.jl-example .jl-example-item {
+  width: 261px;
+  height: 300px;
+  background-color: #d1d1d1;
+}
+.jl-example .jl-example-item img {
+  width: 261px;
+  height: 200px;
+}
+.jl-example .jl-engineer-container {
+  text-align: center;
+  line-height: 50%;
+}
+.jl-example .jl-engineer-container .jl-engineer-pic {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto;
+  border-radius: 29px;
+  text-align: center;
+  position: relative;
+  margin: -30px auto 0;
+}
+.jl-example .jl-engineer-container p {
+  margin-top: 10px;
+}
+.jl-example .jl-client-house {
+  border-top: 1px solid #c3c3c3;
+  padding: 10px 6px 10px 6px;
+  text-align: center;
+}
+.jl-example .jl-client-house span {
+  font-size: 90%;
+  color: #a7a7a7;
+  padding: 0 14px 0 14px;
+}
+.jl-example .jl-client-house span:first-child {
+  border-right: 1px solid #c3c3c3;
+}
+.jl-example .jl-client-house span:last-child {
+  border-left: 1px solid #c3c3c3;
+}
+.jl-example ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.jl-example li {
+  float: left;
+  margin: 5px;
+}

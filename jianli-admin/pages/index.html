@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN" ng-app="jlApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>崔工监理</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap-modal/2.2.6/css/bootstrap-modal.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/datatables/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/metisMenu/2.5.2/metisMenu.min.css" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
+    <link href="/css/admin.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="wrapper">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/building">崔工监理</a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li>
+                <a href="https://oss.console.aliyun.com/index#/bucket/oss-cn-shanghai/cgjl/object/" target="_blank">
+                    <i class="fa fa-cloud-upload"></i>
+                </a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#"><i class="fa fa-user fa-fw"></i> 管理员</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> 登出</a>
+                    </li>
+                </ul>
+                <!-- /.dropdown-user -->
+            </li>
+            <!-- /.dropdown -->
+        </ul>
+
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav in" id="side-menu">
+                    <li>
+                        <a href="" ng-href="#/"><i class="fa fa-dashboard fa-fw"></i> 员工信息</a>
+                    </li>
+                    <li>
+                        <a href="" ng-href="#/building"><i class="fa fa-dashboard fa-fw"></i> 项目工程</a>
+                    </li>
+                    <li>
+                        <a href="" aria-expanded="false"><i class="fa fa-wrench fa-fw"></i> 家装百科<span
+                                class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse" aria-expanded="false">
+                            <li>
+                                <a href="#/baike">查看</a>
+                            </li>
+                            <li>
+                                <a href="#/baike/form">新增</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="" aria-expanded="false"><i class="fa fa-wrench fa-fw"></i> 监理日志<span
+                                class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse" aria-expanded="false">
+                            <li>
+                                <a href="#/journal">查看</a>
+                            </li>
+                            <li>
+                                <a href="#/journal/form">新增</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+    </nav>
+
+    <div id="page-wrapper">
+        <div ng-view></div>
+    </div>
+</div>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/bootbox.js/4.4.0/bootbox.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-modal/2.2.6/js/bootstrap-modal.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js"></script>
+<script src="//cdn.bootcss.com/metisMenu/2.5.2/metisMenu.min.js"></script>
+<script src="//cdn.bootcss.com/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.bootcss.com/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.7/angular.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.7/angular-route.min.js"></script>
+<script src="http:////cdn.bootcss.com/summernote/0.8.1/summernote.min.js"></script>
+<script src="http://cdn.bootcss.com/summernote/0.8.1/lang/summernote-zh-CN.min.js"></script>
+
+<script src="/js/jianli-admin.min.js"></script>
+<script>
+    //Loads the correct sidebar on window load,
+    //collapses the sidebar on window resize.
+    // Sets the min-height of #page-wrapper to window size
+    $(function () {
+        $('#side-menu').metisMenu();
+        $(".nav a[ng-href]").on('click', function () {
+            $('.navbar-toggle').click() //bootstrap 3.x by Richard
+        });
+        $(window).bind("load resize", function () {
+            topOffset = 50;
+            width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;
+            if (width < 768) {
+                $('div.navbar-collapse').addClass('collapse');
+                $('.navbar-toggle').click() //bootstrap 3.x by Richard
+                topOffset = 100; // 2-row-menu
+            } else {
+                $('div.navbar-collapse').removeClass('collapse');
+            }
+
+            height = ((this.window.innerHeight > 0) ? this.window.innerHeight : this.screen.height) - 1;
+            height = height - topOffset;
+            if (height < 1) height = 1;
+            if (height > topOffset) {
+                $("#page-wrapper").css("min-height", (height) + "px");
+            }
+        });
+
+        var url = window.location;
+        var element = $('ul.nav a').filter(function () {
+            return this.href == url || url.href.indexOf(this.href) == 0;
+        }).addClass('active').parent().parent().addClass('in').parent();
+        if (element.is('li')) {
+            element.addClass('active');
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,397 @@
+ul {
+  list-style: none;
+}
+body {
+  line-height: 1;
+  color: #000;
+  font-family: Microsoft YaHei UIRegular, Microsoft YaHei, sans-serif, Arial, '宋体';
+}
+.horizontal-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.horizontal-list li {
+  float: left;
+  margin: 5px;
+}
+.hide {
+  display: none;
+}
+.non-visible {
+  visibility: hidden;
+}
+.jl-carousel-img {
+  height: 405px;
+}
+#quick_join {
+  position: absolute;
+  left: 90px;
+  top: 10px;
+  width: 230px;
+  height: 380px;
+  background-color: whitesmoke;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  text-align: center;
+  padding: 20px 0 10px 0;
+}
+#quick_join p {
+  margin: 8px 0;
+  padding: 4px;
+  font-size: smaller;
+  color: grey;
+}
+#quick_join .dropdown-menu p:hover {
+  background-color: gainsboro;
+}
+#quick_join p .big {
+  font-size: large;
+  color: black;
+}
+#quick_join .quick-join-item {
+  margin: 12px 0;
+}
+#quick_join input {
+  padding: 4px 4px 5px 4px;
+  border-radius: 0rem;
+  font-size: small;
+}
+#quick_join .input-group button {
+  width: 80px;
+  padding: 4px 0px 5px 5px;
+  font-size: small;
+  text-align: left;
+}
+#quick_join .dropdown-toggle::after {
+  float: right;
+  margin: 8px 6px 0 4px;
+}
+#quick_join .dropdown-menu {
+  min-width: 82px;
+  color: grey;
+}
+.header {
+  background: #000;
+  height: 50px;
+}
+.navbar {
+  padding: 0;
+  margin-left: 100px;
+}
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+.navbar li {
+  float: left;
+}
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+.navbar .active {
+  border-bottom: 2px ghostwhite solid;
+}
+.logo {
+  margin-left: 40px;
+  height: 50px;
+  padding-top: 14px;
+}
+.logo img {
+  width: 83px;
+  height: 20px;
+}
+#quick_nav {
+  position: fixed;
+  left: 5px;
+  top: 160px;
+  z-index: 100;
+}
+#quick_nav li {
+  padding: 5px;
+}
+#quick_nav div {
+  width: 28px;
+  height: 28px;
+  text-align: center;
+}
+#quick_nav .qq .icon {
+  width: 28px;
+  height: 28px;
+}
+#quick_nav .weixin .icon {
+  width: 24px;
+  height: 24px;
+}
+#quick_nav .weixin:hover .full-content {
+  visibility: visible;
+}
+#quick_nav .weixin {
+  position: relative;
+}
+#quick_nav .weixin .full-content {
+  position: absolute;
+  top: -30px;
+  left: 50px;
+}
+.jl-process {
+  padding: 0;
+  margin: 0;
+}
+.jl-process .jl-process-item {
+  text-align: center;
+}
+.jl-process .jl-process-item-img img {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  border: 1px solid white;
+  text-align: center;
+  padding-top: 0px;
+}
+.jl-process .jl-process-item-title {
+  margin: 20px 0px 30px 0px;
+  color: white;
+}
+.jl-process .jl-process-item-detail {
+  line-height: 50%;
+  font-size: 80%;
+  color: #a6a6a6;
+  text-align: center;
+}
+.jl-process ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.jl-process li {
+  float: left;
+}
+.jl-process .jl-process-seperator {
+  padding: 45px 20px 0px 20px;
+  color: white;
+}
+.jl-example {
+  padding: 0;
+  margin: 0;
+}
+.jl-example .jl-example-item {
+  width: 261px;
+  height: 300px;
+  background-color: #d1d1d1;
+}
+.jl-example .jl-example-item img {
+  width: 261px;
+  height: 200px;
+}
+.jl-example .jl-engineer-container {
+  text-align: center;
+  line-height: 50%;
+}
+.jl-example .jl-engineer-container .jl-engineer-pic {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto;
+  border-radius: 29px;
+  text-align: center;
+  position: relative;
+  margin: -30px auto 0;
+}
+.jl-example .jl-engineer-container p {
+  margin-top: 10px;
+}
+.jl-example .jl-client-house {
+  border-top: 1px solid #c3c3c3;
+  padding: 10px 6px 10px 6px;
+  text-align: center;
+}
+.jl-example .jl-client-house span {
+  font-size: 90%;
+  color: #a7a7a7;
+  padding: 0 14px 0 14px;
+}
+.jl-example .jl-client-house span:first-child {
+  border-right: 1px solid #c3c3c3;
+}
+.jl-example .jl-client-house span:last-child {
+  border-left: 1px solid #c3c3c3;
+}
+.jl-example ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.jl-example li {
+  float: left;
+  margin: 5px;
+}
+.jl-baike {
+  padding: 0;
+  margin: 0;
+}
+.jl-baike .jl-baike-item {
+  width: 320px;
+  height: 80px;
+  overflow: hidden;
+}
+.jl-baike .jl-baike-item .jl-baike-icon-container {
+  vertical-align: top;
+  display: inline-block;
+  background-color: #d1d1d1;
+  text-align: center;
+  position: relative;
+  padding: 10px 10px 0 10px;
+}
+.jl-baike .jl-baike-item .jl-baike-content-container {
+  vertical-align: top;
+  display: inline-block;
+  margin-left: 15px;
+  line-height: 180%;
+  font-size: x-small;
+}
+.jl-baike .jl-baike-item .jl-baike-content-container p {
+  margin: 0;
+  padding: 0;
+}
+.jl-baike .jl-baike-item .jl-baike-content-container span {
+  color: grey;
+}
+.jl-baike ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.jl-baike li {
+  float: left;
+  margin: 10px 8px 30px 8px;
+}
+.jl-team {
+  padding: 0;
+  margin: 0;
+}
+.jl-team-top {
+  position: relative;
+  top: -30px;
+  text-align: center;
+}
+.jl-team-top .jl-team-top-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  text-align: center;
+  padding-top: 15px;
+  margin: 0 auto;
+  background-color: #d1d1d1;
+}
+.jl-team-top p {
+  margin: 20px 0 10px 0;
+  color: white;
+}
+.jl-team .jl-team-item {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+.jl-team .jl-team-item img {
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+  position: absolute;
+  z-index: 10;
+  overflow: hidden;
+}
+.jl-team .jl-team-item .jl-team-content {
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+  position: absolute;
+  z-index: 20;
+  text-align: left;
+  padding: 50px 0 0 45px;
+  visibility: hidden;
+  background-color: grey;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+.jl-team .jl-team-item:hover .jl-team-content {
+  visibility: visible;
+}
+.jl-team .jl-team-item .jl-team-content .name {
+  border-bottom: 1px solid gainsboro;
+  padding-bottom: 10px;
+  color: white;
+}
+.jl-team .jl-team-item .jl-team-content p {
+  margin: 0;
+  padding: 0;
+  line-height: 170%;
+  color: gainsboro;
+  font-size: smaller;
+}
+.jl-team-campany-honor {
+  margin: 50px auto;
+  text-align: center;
+}
+.jl-team-campany-honor label {
+  color: white;
+  padding: 8px 10px 8px 10px;
+}
+.jl-team-campany-honor .with-border {
+  border-left: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
+}
+.jl-team ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.jl-team li {
+  float: left;
+  margin: 30px;
+}
+.footer {
+  height: 50px;
+  background-color: black;
+  color: #8b8b8b;
+  font-size: smaller;
+  text-align: center;
+}
+.footer div {
+  display: inline-block;
+}
+.footer label {
+  color: #8b8b8b;
+}
+.jl-service-intro article p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #7f7f7f;
+  margin-top: 24px;
+  text-indent: 2em;
+}
+.i-title {
+  text-transform: uppercase;
+  font-size: 24px;
+  color: #9b9b9b;
+  line-height: 50px;
+  vertical-align: top;
+  border-bottom: 1px solid #dbdbdb;
+  margin: 20px 0 16px;
+}
+.i-title span {
+  font-family: arial;
+  color: #ffa751;
+  font-size: 28px;
+}

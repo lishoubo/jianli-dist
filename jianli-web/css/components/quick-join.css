@@ -1,0 +1,47 @@
+#quick_join {
+  position: absolute;
+  left: 90px;
+  top: 10px;
+  width: 230px;
+  height: 380px;
+  background-color: whitesmoke;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  text-align: center;
+  padding: 20px 0 10px 0;
+}
+#quick_join p {
+  margin: 8px 0;
+  padding: 4px;
+  font-size: smaller;
+  color: grey;
+}
+#quick_join .dropdown-menu p:hover {
+  background-color: gainsboro;
+}
+#quick_join p .big {
+  font-size: large;
+  color: black;
+}
+#quick_join .quick-join-item {
+  margin: 12px 0;
+}
+#quick_join input {
+  padding: 4px 4px 5px 4px;
+  border-radius: 0rem;
+  font-size: small;
+}
+#quick_join .input-group button {
+  width: 80px;
+  padding: 4px 0px 5px 5px;
+  font-size: small;
+  text-align: left;
+}
+#quick_join .dropdown-toggle::after {
+  float: right;
+  margin: 8px 6px 0 4px;
+}
+#quick_join .dropdown-menu {
+  min-width: 82px;
+  color: grey;
+}

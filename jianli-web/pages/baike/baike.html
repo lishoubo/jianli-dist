@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>崔工监理</title>
+    
+
+    <link href="//cdn.bootcss.com/normalize/4.1.1/normalize.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/2.2.3/jquery.js"></script>
+    
+<link href="/css/baike.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row header">
+
+    <div class="col-md-2 col-md-offset-1">
+        <div class="logo">
+            <a href="/" title="装小蜜家装监理-管家式家装监理服务"><img src="/images/logo.png"/></a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="navbar">
+            <ul>
+                <li><a href="/pages/index/index.html">首页</a></li>
+                <li><a href="/pages/journal/journal.html">监理日志</a></li>
+                <li><a href="/pages/baike/baike.html">家装百科</a></li>
+                <li><a href="#about">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    //Loads the correct sidebar on window load,
+    //collapses the sidebar on window resize.
+    // Sets the min-height of #page-wrapper to window size
+    $(function () {
+        $(window).bind("load resize", function () {
+            var topOffset = 50;
+            var width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;
+            if (width < 768) {
+                $('div.navbar-collapse').addClass('collapse');
+                topOffset = 100; // 2-row-menu
+            } else {
+                $('div.navbar-collapse').removeClass('collapse');
+            }
+
+            var height = ((this.window.innerHeight > 0) ? this.window.innerHeight : this.screen.height) - 1;
+            height = height - topOffset;
+            if (height < 1) height = 1;
+            if (height > topOffset) {
+                $("#page-wrapper").css("min-height", (height) + "px");
+            }
+        });
+
+        var url = window.location;
+        $('.navbar a').filter(function () {
+            return this.href == url || url.href.indexOf(this.href) == 0;
+        }).addClass('active');
+    })
+</script>
+    
+
+<div class="row" style="margin: 20px 50px">
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="horizontal-list jl-baike-category-list">
+                    <ul>
+                        <li class="active">
+                            <div>
+                                <img src="/images/icon-baike-01.png"/>
+                                <p>所有分类</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="/images/icon-baike-02.png"/>
+                                <p>前期准备</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="/images/icon-baike-01.png"/>
+                                <p>方案设计</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="/images/icon-baike-01.png"/>
+                                <p>建筑采纳</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="/images/icon-baike-01.png"/>
+                                <p>硬装施工</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="/images/icon-baike-01.png"/>
+                                <p>软装配饰</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="/images/icon-baike-01.png"/>
+                                <p>工程验收</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jl-baike-category-filter">
+                    <!-- Split button -->
+                    <div class="btn-group">
+                        <label>排序:</label>
+                        <button type="button" class="btn btn-default">按时间排序</button>
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">按时间排序</a></li>
+                            <li><a href="#">按标题排序</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <label>类型:</label>
+                        <button type="button" class="btn btn-default">所有类型</button>
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">所有类型</a></li>
+                            <li><a href="#">前期准备</a></li>
+                            <li><a href="#">方案设计</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ul style="padding: 6px 20px">
+                    <li>
+                        <div class="row jl-baike-list-item">
+                            <img class="col-md-3" src="/images/img-baike-list-item.png">
+                            <div class="col-md-9" style="height: 100%">
+                                <div class="jl-baike-item-header">
+                                    <h6>自主打造的欧式混搭现代风格美家清新亮相</h6>
+                                    <label>前期准备</label>
+                                </div>
+                                <p class="jl-baike-item-desc">
+                                    这么久才放送的卧室篇其实是因为平时太忙了（好吧，我承认是因为懒得收拾房间）但不写出来总有种欠债的感觉，干什么都觉得心中
+                                    惴惴不安，所以今天有空就赶紧发了吧~ 先来说说主卧，是很标准的四方形，虽然不大，但还是被我打理的五脏俱全，门直对着看进去是个
+                                    电视机柜，储物功能很实在也很合理现在基本已经被我塞得满满的了，上面放点小东西也挺漂亮~
+                                    这么久才放送的卧室篇其实是因为平时太忙了（好吧，我承认是因为懒得收拾房间）但不写出来总有种欠债的感觉，干什么都觉得心中
+                                    惴惴不安，所以今天有空就赶紧发了吧~ 先来说说主卧，是很标准的四方形，虽然不大，但还是被我打理的五脏俱全，门直对着看进去是个
+                                    电视机柜，储物功能很实在也很合理现在基本已经被我塞得满满的了，上面放点小东西也挺漂亮~
+                                </p>
+                                <div class="jl-baike-item-footer">
+                                    <label>1290人浏览</label>
+                                    <label style="float: right; padding-left: 30px; border-left: 1px solid black">2016-3-2 </label>
+                                    <label style="float: right; padding-right:30px">4级监理 </label>
+                                    <label style="float: right; padding-right: 10px">刘志强 </label>
+                                    <label style="color: grey; float: right;padding-right: 10px">发布者: </label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row jl-baike-list-item">
+                            <img class="col-md-3" src="/images/img-baike-list-item.png">
+                            <div class="col-md-9" style="height: 100%">
+                                <div class="jl-baike-item-header">
+                                    <h6>自主打造的欧式混搭现代风格美家清新亮相</h6>
+                                    <label>前期准备</label>
+                                </div>
+                                <p class="jl-baike-item-desc">
+                                    这么久才放送的卧室篇其实是因为平时太忙了（好吧，我承认是因为懒得收拾房间）但不写出来总有种欠债的感觉，干什么都觉得心中
+                                    惴惴不安，所以今天有空就赶紧发了吧~ 先来说说主卧，是很标准的四方形，虽然不大，但还是被我打理的五脏俱全，门直对着看进去是个
+                                    电视机柜，储物功能很实在也很合理现在基本已经被我塞得满满的了，上面放点小东西也挺漂亮~
+                                    这么久才放送的卧室篇其实是因为平时太忙了（好吧，我承认是因为懒得收拾房间）但不写出来总有种欠债的感觉，干什么都觉得心中
+                                    惴惴不安，所以今天有空就赶紧发了吧~ 先来说说主卧，是很标准的四方形，虽然不大，但还是被我打理的五脏俱全，门直对着看进去是个
+                                    电视机柜，储物功能很实在也很合理现在基本已经被我塞得满满的了，上面放点小东西也挺漂亮~
+                                </p>
+                                <div class="jl-baike-item-footer">
+                                    <label>1290人浏览</label>
+                                    <label style="float: right; padding-left: 30px; border-left: 1px solid black">2016-3-2 </label>
+                                    <label style="float: right; padding-right:30px">4级监理 </label>
+                                    <label style="float: right; padding-right: 10px">刘志强 </label>
+                                    <label style="color: grey; float: right;padding-right: 10px">发布者: </label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row jl-baike-list-item">
+                            <img class="col-md-3" src="/images/img-baike-list-item.png">
+                            <div class="col-md-9" style="height: 100%">
+                                <div class="jl-baike-item-header">
+                                    <h6>自主打造的欧式混搭现代风格美家清新亮相</h6>
+                                    <label>前期准备</label>
+                                </div>
+                                <p class="jl-baike-item-desc">
+                                    这么久才放送的卧室篇其实是因为平时太忙了（好吧，我承认是因为懒得收拾房间）但不写出来总有种欠债的感觉，干什么都觉得心中
+                                    惴惴不安，所以今天有空就赶紧发了吧~ 先来说说主卧，是很标准的四方形，虽然不大，但还是被我打理的五脏俱全，门直对着看进去是个
+                                    电视机柜，储物功能很实在也很合理现在基本已经被我塞得满满的了，上面放点小东西也挺漂亮~
+                                    这么久才放送的卧室篇其实是因为平时太忙了（好吧，我承认是因为懒得收拾房间）但不写出来总有种欠债的感觉，干什么都觉得心中
+                                    惴惴不安，所以今天有空就赶紧发了吧~ 先来说说主卧，是很标准的四方形，虽然不大，但还是被我打理的五脏俱全，门直对着看进去是个
+                                    电视机柜，储物功能很实在也很合理现在基本已经被我塞得满满的了，上面放点小东西也挺漂亮~
+                                </p>
+                                <div class="jl-baike-item-footer">
+                                    <label>1290人浏览</label>
+                                    <label style="float: right; padding-left: 30px; border-left: 1px solid black">2016-3-2 </label>
+                                    <label style="float: right; padding-right:30px">4级监理 </label>
+                                    <label style="float: right; padding-right: 10px">刘志强 </label>
+                                    <label style="color: grey; float: right;padding-right: 10px">发布者: </label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row jl-baike-list-item">
+                            <img class="col-md-3" src="/images/img-baike-list-item.png">
+                            <div class="col-md-9" style="height: 100%">
+                                <div class="jl-baike-item-header">
+                                    <h6>自主打造的欧式混搭现代风格美家清新亮相</h6>
+                                    <label>前期准备</label>
+                                </div>
+                                <p class="jl-baike-item-desc">
+                                    这么久才放送的卧室篇其实是因为平时太忙了（好吧，我承认是因为懒得收拾房间）但不写出来总有种欠债的感觉，干什么都觉得心中
+                                    惴惴不安，所以今天有空就赶紧发了吧~ 先来说说主卧，是很标准的四方形，虽然不大，但还是被我打理的五脏俱全，门直对着看进去是个
+                                    电视机柜，储物功能很实在也很合理现在基本已经被我塞得满满的了，上面放点小东西也挺漂亮~
+                                    这么久才放送的卧室篇其实是因为平时太忙了（好吧，我承认是因为懒得收拾房间）但不写出来总有种欠债的感觉，干什么都觉得心中
+                                    惴惴不安，所以今天有空就赶紧发了吧~ 先来说说主卧，是很标准的四方形，虽然不大，但还是被我打理的五脏俱全，门直对着看进去是个
+                                    电视机柜，储物功能很实在也很合理现在基本已经被我塞得满满的了，上面放点小东西也挺漂亮~
+                                </p>
+                                <div class="jl-baike-item-footer">
+                                    <label>1290人浏览</label>
+                                    <label style="float: right; padding-left: 30px; border-left: 1px solid black">2016-3-2 </label>
+                                    <label style="float: right; padding-right:30px">4级监理 </label>
+                                    <label style="float: right; padding-right: 10px">刘志强 </label>
+                                    <label style="color: grey; float: right;padding-right: 10px">发布者: </label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row jl-baike-list-item">
+                            <img class="col-md-3" src="/images/img-baike-list-item.png">
+                            <div class="col-md-9" style="height: 100%">
+                                <div class="jl-baike-item-header">
+                                    <h6>自主打造的欧式混搭现代风格美家清新亮相</h6>
+                                    <label>前期准备</label>
+                                </div>
+                                <p class="jl-baike-item-desc">
+                                    这么久才放送的卧室篇其实是因为平时太忙了（好吧，我承认是因为懒得收拾房间）但不写出来总有种欠债的感觉，干什么都觉得心中
+                                    惴惴不安，所以今天有空就赶紧发了吧~ 先来说说主卧，是很标准的四方形，虽然不大，但还是被我打理的五脏俱全，门直对着看进去是个
+                                    电视机柜，储物功能很实在也很合理现在基本已经被我塞得满满的了，上面放点小东西也挺漂亮~
+                                    这么久才放送的卧室篇其实是因为平时太忙了（好吧，我承认是因为懒得收拾房间）但不写出来总有种欠债的感觉，干什么都觉得心中
+                                    惴惴不安，所以今天有空就赶紧发了吧~ 先来说说主卧，是很标准的四方形，虽然不大，但还是被我打理的五脏俱全，门直对着看进去是个
+                                    电视机柜，储物功能很实在也很合理现在基本已经被我塞得满满的了，上面放点小东西也挺漂亮~
+                                </p>
+                                <div class="jl-baike-item-footer">
+                                    <label>1290人浏览</label>
+                                    <label style="float: right; padding-left: 30px; border-left: 1px solid black">2016-3-2 </label>
+                                    <label style="float: right; padding-right:30px">4级监理 </label>
+                                    <label style="float: right; padding-right: 10px">刘志强 </label>
+                                    <label style="color: grey; float: right;padding-right: 10px">发布者: </label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <nav style="float: right">
+                    <ul class="pagination pagination-sm ">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 jl-hot-baike-items">
+        <p>热门百科</p>
+        <ul>
+            <li>2015年装修五大流行趋势</li>
+            <li>一张图带你了解装修</li>
+            <li>品味小清新美居</li>
+            <li>复古美苑心中理想之家</li>
+            <li>欧式混搭现代风格美家</li>
+        </ul>
+    </div>
+
+</div>
+
+
+    <div class="row footer">
+    <div>
+        <label>邮箱</label>
+        <span>cuigongjianli@163.com</span>
+    </div>
+    <div>
+        <label>电话</label>
+        <span>0571-845617</span>
+    </div>
+    <div>
+        <label>QQ</label>
+        <span>1051870530</span>
+    </div>
+    <div>
+        <label>地址</label>
+        <span>拱墅区祥园路38号浙报印务中心308室</span>
+    </div>
+    <div>
+        Copyright ©2012 崔工验房. 浙ICP备15018361号
+    </div>
+</div>
+</div>
+
+
+<script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/bootbox.js/4.4.0/bootbox.js"></script>
+<script src="//cdn.bootcss.com/vue/1.0.24/vue.min.js"></script>
+<script>
+    Vue.mixin({
+        methods: {
+            _api_host: function () {
+                return "http://localhost:8080";
+            },
+            _post: function (api, data, success_callback, error_callback) {
+                var self = this;
+                $.ajax({
+                    method: 'post',
+                    url: self._api_host() + api,
+                    data: data,
+                    success: success_callback,
+                    error: error_callback
+                })
+            },
+            _get: function (api, data, success_callback, error_callback) {
+                var self = this;
+                $.ajax({
+                    method: 'get',
+                    url: self._api_host() + api,
+                    data: data,
+                    success: success_callback,
+                    error: error_callback
+                })
+            }
+
+        }
+    });
+    function show_tip(message) {
+        bootbox.dialog({
+            message: message,
+            title: "提示",
+            animate: true,
+            buttons: {
+                success: {
+                    label: "好的",
+                    className: "btn-success"
+                }
+            }
+        });
+
+    }
+</script>
+
+<script src="/js/baike.js"/>
+
+</body>
+</html>

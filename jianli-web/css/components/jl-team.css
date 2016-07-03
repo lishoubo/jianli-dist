@@ -1,0 +1,85 @@
+.jl-team {
+  padding: 0;
+  margin: 0;
+}
+.jl-team-top {
+  position: relative;
+  top: -30px;
+  text-align: center;
+}
+.jl-team-top .jl-team-top-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  text-align: center;
+  padding-top: 15px;
+  margin: 0 auto;
+  background-color: #d1d1d1;
+}
+.jl-team-top p {
+  margin: 20px 0 10px 0;
+  color: white;
+}
+.jl-team .jl-team-item {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+.jl-team .jl-team-item img {
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+  position: absolute;
+  z-index: 10;
+  overflow: hidden;
+}
+.jl-team .jl-team-item .jl-team-content {
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+  position: absolute;
+  z-index: 20;
+  text-align: left;
+  padding: 50px 0 0 45px;
+  visibility: hidden;
+  background-color: grey;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+.jl-team .jl-team-item:hover .jl-team-content {
+  visibility: visible;
+}
+.jl-team .jl-team-item .jl-team-content .name {
+  border-bottom: 1px solid gainsboro;
+  padding-bottom: 10px;
+  color: white;
+}
+.jl-team .jl-team-item .jl-team-content p {
+  margin: 0;
+  padding: 0;
+  line-height: 170%;
+  color: gainsboro;
+  font-size: smaller;
+}
+.jl-team-campany-honor {
+  margin: 50px auto;
+  text-align: center;
+}
+.jl-team-campany-honor label {
+  color: white;
+  padding: 8px 10px 8px 10px;
+}
+.jl-team-campany-honor .with-border {
+  border-left: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
+}
+.jl-team ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.jl-team li {
+  float: left;
+  margin: 30px;
+}

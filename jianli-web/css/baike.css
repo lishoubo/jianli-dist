@@ -1,0 +1,197 @@
+ul {
+  list-style: none;
+}
+body {
+  line-height: 1;
+  color: #000;
+  font-family: Microsoft YaHei UIRegular, Microsoft YaHei, sans-serif, Arial, '宋体';
+}
+.horizontal-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.horizontal-list li {
+  float: left;
+  margin: 5px;
+}
+.hide {
+  display: none;
+}
+.non-visible {
+  visibility: hidden;
+}
+.header {
+  background: #000;
+  height: 50px;
+}
+.navbar {
+  padding: 0;
+  margin-left: 100px;
+}
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+.navbar li {
+  float: left;
+}
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+.navbar .active {
+  border-bottom: 2px ghostwhite solid;
+}
+.logo {
+  margin-left: 40px;
+  height: 50px;
+  padding-top: 14px;
+}
+.logo img {
+  width: 83px;
+  height: 20px;
+}
+/*百科list页面头部导航*/
+.jl-baike-category-list li {
+  background-color: lightgray;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  padding: 10px;
+  margin: 8px 5px;
+  position: relative;
+}
+.jl-baike-category-list li img {
+  width: 35px;
+  height: 35px;
+}
+.jl-baike-category-list li > div p {
+  font-size: small;
+  margin-top: 10px;
+}
+.jl-baike-category-list .active {
+  background-color: grey;
+}
+.jl-baike-category-list .active:after {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid grey;
+  display: block;
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 100%;
+  margin-left: -8px;
+}
+.jl-baike-category-list li:first-child {
+  margin-left: 0px;
+}
+.jl-baike-category-list li:hover {
+  background-color: grey;
+}
+/*百科list页面筛选项*/
+.jl-baike-category-filter {
+  position: relative;
+  margin: 10px 0px;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  padding: 10px 20px;
+  font-size: small;
+  text-align: center;
+  text-align: left;
+}
+.jl-baike-category-filter label {
+  position: relative;
+  float: left;
+  display: inline-block;
+  padding: .5rem 1rem;
+  margin: 0px;
+  color: darkgray;
+  line-height: 1.0;
+}
+.jl-baike-category-filter button {
+  color: black;
+  background-color: white;
+  line-height: 1.0;
+  font-size: small;
+}
+.jl-baike-category-filter .dropdown-menu {
+  color: black;
+  width: 100px;
+  font-size: small;
+  line-height: 150%;
+  position: absolute;
+  text-align: right;
+  padding: 10px;
+}
+.jl-baike-category-filter .dropdown-menu a {
+  color: black;
+}
+/*baike list的每一个item*/
+.jl-baike-list-item {
+  background-color: white;
+  height: 200px;
+  padding: 10px 10px 10px 0px;
+}
+.jl-baike-list-item .col-md-9 {
+  padding-right: 0px;
+}
+.jl-baike-list-item img {
+  width: 200px;
+  height: 100%;
+}
+.jl-baike-list-item .jl-baike-item-header {
+  position: relative;
+  padding: 5px 0 15px 0px;
+}
+.jl-baike-list-item .jl-baike-item-header h6 {
+  display: inline-block;
+  font-size: large;
+  font-weight: bolder;
+}
+.jl-baike-list-item .jl-baike-item-header label {
+  float: right;
+}
+.jl-baike-item-desc {
+  font-size: small;
+  color: grey;
+  line-height: 150%;
+  height: 96px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  /*截断文字，显示省略号(...)*/
+  -o-text-overflow: ellipsis;
+  /*Opera的专用截断文字的属性*/
+  text-align: justify;
+}
+.jl-baike-item-footer label {
+  font-size: small;
+}
+/*热门百科*/
+.jl-hot-baike-items p {
+  padding: 10px 10px 20px 10px;
+  border-bottom: 1px solid grey;
+}
+.jl-hot-baike-items ul {
+  padding: 5px 5px 5px 30px;
+}
+.jl-hot-baike-items li {
+  margin: 0;
+  padding: 15px 10px 15px 0px;
+  border-bottom: 1px solid grey;
+  font-size: small;
+  list-style-type: square;
+  list-style-position: inside;
+}

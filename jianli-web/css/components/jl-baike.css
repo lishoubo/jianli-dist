@@ -1,0 +1,41 @@
+.jl-baike {
+  padding: 0;
+  margin: 0;
+}
+.jl-baike .jl-baike-item {
+  width: 320px;
+  height: 80px;
+  overflow: hidden;
+}
+.jl-baike .jl-baike-item .jl-baike-icon-container {
+  vertical-align: top;
+  display: inline-block;
+  background-color: #d1d1d1;
+  text-align: center;
+  position: relative;
+  padding: 10px 10px 0 10px;
+}
+.jl-baike .jl-baike-item .jl-baike-content-container {
+  vertical-align: top;
+  display: inline-block;
+  margin-left: 15px;
+  line-height: 180%;
+  font-size: x-small;
+}
+.jl-baike .jl-baike-item .jl-baike-content-container p {
+  margin: 0;
+  padding: 0;
+}
+.jl-baike .jl-baike-item .jl-baike-content-container span {
+  color: grey;
+}
+.jl-baike ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.jl-baike li {
+  float: left;
+  margin: 10px 8px 30px 8px;
+}
