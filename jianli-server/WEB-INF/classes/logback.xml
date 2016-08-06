@@ -3,9 +3,9 @@
     <property name="pattern" value="%d %p [%t] %c{20} %msg%n"/>
 
     <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/home/www/logs/jianli-server/jl-server.log</file>
+        <file>/tmp/logs/jianli-server/jl-server.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/home/www/logs/jianli-server/jl-server.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <fileNamePattern>/tmp/logs/jianli-server/jl-server.log.%d{yyyy-MM-dd}</fileNamePattern>
             <maxHistory>7</maxHistory>
         </rollingPolicy>
         <encoder>
@@ -14,11 +14,11 @@
         </encoder>
     </appender>
 
-    <appender name="wire" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/home/www/logs/jianli-server/wire.log</file>
+    <appender name="statistic" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/tmp/logs/jianli-server/statistic/statistic.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/home/www/logs/jianli-server/wire.log.%d{yyyy-MM-dd}</fileNamePattern>
-            <maxHistory>7</maxHistory>
+            <fileNamePattern>/tmp/logs/jianli-server/statistic/statistic.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss} %msg%n</pattern>
@@ -26,9 +26,9 @@
     </appender>
 
     <appender name="access" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/home/www/logs/jianli-server/access.log</file>
+        <file>/tmp/logs/jianli-server/access.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/home/www/logs/jianli-server/access.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <fileNamePattern>/tmp/logs/jianli-server/access.log.%d{yyyy-MM-dd}</fileNamePattern>
             <maxHistory>7</maxHistory>
         </rollingPolicy>
         <encoder>
@@ -39,8 +39,8 @@
     <logger name="access" level="INFO" additivity="false">
         <appender-ref ref="access"/>
     </logger>
-    <logger name="wire" additivity="false">
-        <appender-ref ref="wire"/>
+    <logger name="statistic" additivity="false">
+        <appender-ref ref="statistic"/>
     </logger>
 
     <root level="info">
