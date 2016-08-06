@@ -1,7 +1,8 @@
 var jlApp = angular.module('jlApp', ['ngRoute']);
 
 jlApp.constant('config', {
-    host: 'http://localhost:8080'
+    host: '',
+    assetsRoot: '/jianli-admin'
 });
 jlApp.config(['$httpProvider', function ($httpProvider) {
     $httpProvider.defaults.withCredentials = true;
@@ -17,26 +18,26 @@ jlApp.filter('range', function () {
     };
 });
 
-jlApp.config(['$routeProvider', function ($routeProvider) {
+jlApp.config(['$routeProvider', 'config', function ($routeProvider, config) {
     $routeProvider
         .when('/', {
-            templateUrl: '/pages/staff/staff.html',
+            templateUrl: config.assetsRoot + '/pages/staff/staff.html',
             controller: 'staffController'
         })
         .when('/building', {
-            templateUrl: '/pages/building/building.html',
+            templateUrl: config.assetsRoot + '/pages/building/building.html',
             controller: 'buildingController'
         })
         .when('/journal', {
-            templateUrl: '/pages/journal/journal.html',
+            templateUrl: config.assetsRoot + '/pages/journal/journal.html',
             controller: 'journalController'
         })
         .when('/journal/form', {
-            templateUrl: '/pages/journal/form.html',
+            templateUrl: config.assetsRoot + '/pages/journal/form.html',
             controller: 'journalController'
         })
         .when('/journal/form/:id', {
-            templateUrl: '/pages/journal/form.html',
+            templateUrl: config.assetsRoot + '/pages/journal/form.html',
             controller: 'journalController'
         })
         /*.when('/baike', {
@@ -52,7 +53,7 @@ jlApp.config(['$routeProvider', function ($routeProvider) {
          controller: 'baikeController'
          })*/
         .when('/apply', {
-            templateUrl: '/pages/apply/list.html',
+            templateUrl: config.assetsRoot + '/pages/apply/list.html',
             controller: 'applyController'
         });
 }]);
