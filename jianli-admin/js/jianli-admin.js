@@ -1,7 +1,7 @@
 var jlApp = angular.module('jlApp', ['ngRoute']);
 
 jlApp.constant('config', {
-    host: 'http://121.196.233.31:8080'
+    host: 'http://localhost:8080'
 });
 jlApp.config(['$httpProvider', function ($httpProvider) {
     $httpProvider.defaults.withCredentials = true;
@@ -39,17 +39,21 @@ jlApp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: '/pages/journal/form.html',
             controller: 'journalController'
         })
-        .when('/baike', {
-            templateUrl: '/pages/baike/list.html',
-            controller: 'baikeController'
-        })
-        .when('/baike/form', {
-            templateUrl: '/pages/baike/form.html',
-            controller: 'baikeController'
-        })
-        .when('/baike/form/:id', {
-            templateUrl: '/pages/baike/form.html',
-            controller: 'baikeController'
+        /*.when('/baike', {
+         templateUrl: '/pages/baike/list.html',
+         controller: 'baikeController'
+         })
+         .when('/baike/form', {
+         templateUrl: '/pages/baike/form.html',
+         controller: 'baikeController'
+         })
+         .when('/baike/form/:id', {
+         templateUrl: '/pages/baike/form.html',
+         controller: 'baikeController'
+         })*/
+        .when('/apply', {
+            templateUrl: '/pages/apply/list.html',
+            controller: 'applyController'
         });
 }]);
 
@@ -483,10 +487,10 @@ jlApp.controller('journalController', ['$scope', '$http', '$route', '$location',
                 console.log(response);
                 $scope.form = {
                     staff: response.data.staff.name,
-                    building:response.data.building.name,
-                    cover:response.data.cover,
-                    procedure:response.data.procedure,
-                    content:response.data.content
+                    building: response.data.building.name,
+                    cover: response.data.cover,
+                    procedure: response.data.procedure,
+                    content: response.data.content
                 };
                 var div = document.createElement('div');
                 div.innerHTML = $scope.form.content;
@@ -625,4 +629,29 @@ jlApp.controller('journalController', ['$scope', '$http', '$route', '$location',
         $scope.get_buildings();
     }
 
+}]);
+
+jlApp.controller('applyController', ['$scope', '$http', 'config', function ($scope, $http, config) {
+    $scope.result = {
+        data: {
+            page: 0,
+            pageSize: 10,
+            items: []
+        }
+    };
+
+    $scope.go_to_page = function (page) {
+        if (!page) {
+            page = 1;
+        }
+        $http.get(
+            config.host + "/api/server/charge",
+            {'params': {'page': page, 'pageSize': 10}}
+        ).success(function (response) {
+            $scope.result.data = response.data;
+        }).error(function (error) {
+            console.log(error);
+        });
+    };
+    $scope.go_to_page(1);
 }]);

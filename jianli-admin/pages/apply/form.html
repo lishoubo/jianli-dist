@@ -1,0 +1,54 @@
+<form novalidate>
+    <div class="form-group row">
+        <label class="col-sm-1 form-control-label">标题</label>
+        <div class="col-sm-11">
+            <input class="form-control form-control-sm" type="text" placeholder="请输入标题" ng-model="form.title">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-1 form-control-label">阶段</label>
+        <div class="col-sm-4">
+            <select class="form-control" ng-model="form.procedure">
+                <option value="PREPARE">前期准备</option>
+                <option value="DESIGN">方案设计</option>
+                <option value="PURCHASE">建材采购</option>
+                <option value="CONSTRUCTION">硬装施工</option>
+                <option value="ORNAMENT">软装配饰</option>
+                <option value="ACCEPTANCE">工程验收</option>
+            </select>
+        </div>
+
+        <label class="col-sm-1 col-sm-offset-2 form-control-label">作者</label>
+        <div class="col-sm-4">
+            <input class="form-control form-control-sm" type="text" ng-model="form.author">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-1 form-control-label">封面</label>
+        <div class="col-sm-11">
+            <input class="form-control form-control-sm" type="text" ng-model="form.cover" placeholder="输入封面的图片URL">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-12">
+            <div id="baike-editor"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-2 col-md-offset-10">
+            <input type="submit" class="btn btn-default btn-small" value="更新"
+                   ng-click="update_baike()" ng-if="form._id"/>
+            <input type="submit" class="btn btn-default btn-small" value="录入"
+                   ng-click="add_baike()" ng-if="!form._id"/>
+        </div>
+    </div>
+</form>
+
+<script>
+    $(document).ready(function () {
+        $('#baike-editor').summernote({
+            lang: 'zh-CN',
+            height: 350
+        });
+    });
+</script>
