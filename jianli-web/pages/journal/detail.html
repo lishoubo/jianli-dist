@@ -11,7 +11,8 @@
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <script src="//cdn.bootcss.com/jquery/2.2.3/jquery.js"></script>
     
-<link href="/css/journal.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker.min.css" rel="stylesheet">
+<link href="/css/journal-detail.css" rel="stylesheet">
 
 </head>
 <body>
@@ -67,70 +68,143 @@
 
 <div class="row" style="margin: 20px 50px">
     <div class="col-md-9">
-        <div class="row jl-journal-filter">
-            <div class="col-md-2">
-                <h5>监理日志</h5>
+        <div class="row" style="padding: 0 0 5px 0;border-bottom: 1px solid grey">
+            <div class="col-md-6" style="padding: 0">
+                <ol class="breadcrumb jl-detail-breadcrumb">
+                    <li><a href="/pages/journal/journal.html">监理日志</a></li>
+                    <li class="active">工程详情</li>
+                </ol>
             </div>
-            <div class="col-md-8 col-md-offset-2" style="text-align: right">
-
-                <!-- Split button -->
-                <div class="btn-group">
-                    <label>区域:</label>
-                    <button type="button" class="btn btn-default">西湖区</button>
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">余杭区</a></li>
-                        <li><a href="#">西湖区</a></li>
-                        <li><a href="#">拱墅区</a></li>
-                        <li><a href="#">下城区</a></li>
-                    </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12 jl-detail-building" style="margin-top: 25px">
+                <h5 class="i-title">竹海水韵-2单元-1203</h5>
+                <div class="i-group">
+                    <label>工程地点:</label>
+                    <span>余杭区闲林镇</span>
                 </div>
-                <div class="btn-group">
-                    <label>户型:</label>
-                    <button type="button" class="btn btn-default">两居室</button>
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">一居室</a></li>
-                        <li><a href="#">两居室</a></li>
-                        <li><a href="#">三居室</a></li>
-                    </ul>
+                <div class="i-group">
+                    <label>单元户型:</label>
+                    <span>三室一厅</span>
                 </div>
-                <div class="btn-group">
-                    <label>进度:</label>
-                    <button type="button" class="btn btn-default">进行中</button>
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                        <span class="caret"></span>
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">已完工</a></li>
-                        <li><a href="#">未开始</a></li>
-                    </ul>
+                <div class="i-group">
+                    <label>监理类型:</label>
+                    <span>全程监理</span>
+                </div>
+                <div class="i-group">
+                    <label>预计工期:</label>
+                    <span>60天</span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12" style="margin-top: 25px">
-                <ul>
+                <div class="jl-process">
+                    <ul>
+                        <li>
+                            <div class="jl-process-item">
+                                <div class="jl-process-item-img">
+                                    <img src="/images/jl-process-01.jpg"/>
+                                    <span class="stat i-finish">已经完成</span>
+                                </div>
+                                <div class="jl-process-item-title">
+                                    <label>前期审核</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="jl-process-seperator">
+                                . . .
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="jl-process-item">
+                                <div class="jl-process-item-img">
+                                    <img src="/images/jl-process-01.jpg"/>
+                                    <span class="stat i-finish">已经完成</span>
+                                </div>
+                                <div class="jl-process-item-title">
+                                    <label>前期审核</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="jl-process-seperator">
+                                . . .
+                            </div>
+                        </li>
+                        <li>
+                            <div class="jl-process-item">
+                                <div class="jl-process-item-img">
+                                    <img src="/images/jl-process-01.jpg"/>
+                                    <span class="stat i-finish">已经完成</span>
+                                </div>
+                                <div class="jl-process-item-title">
+                                    <label>前期审核</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="jl-process-seperator">
+                                . . .
+                            </div>
+                        </li>
+                        <li>
+                            <div class="jl-process-item">
+                                <div class="jl-process-item-img">
+                                    <img src="/images/jl-process-01.jpg"/>
+                                    <span class="stat i-finish">已经完成</span>
+                                </div>
+                                <div class="jl-process-item-title">
+                                    <label>前期审核</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="jl-process-seperator">
+                                . . .
+                            </div>
+                        </li>
+                        <li>
+                            <div class="jl-process-item">
+                                <div class="jl-process-item-img">
+                                    <img src="/images/jl-process-01.jpg"/>
+                                    <span class="stat i-running">进行中</span>
+                                </div>
+                                <div class="jl-process-item-title">
+                                    <label>前期审核</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="jl-process-seperator">
+                                . . .
+                            </div>
+                        </li>
+                        <li>
+                            <div class="jl-process-item">
+                                <div class="jl-process-item-img">
+                                    <img src="/images/jl-process-01.jpg"/>
+                                </div>
+                                <div class="jl-process-item-title">
+                                    <label>前期审核</label>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="">
+                <ul style="padding: 0;">
                     <li>
                         <div class="row jl-journal-list-item">
-                            <div class="col-md-1 jl-journal-list-item-employer">
-                                <img src="/images/icon-01.png"/>
-                                <p>王建国</p>
-                                <p>4级监理</p>
-                                <img src="/images/vertical-line.png"/>
-                            </div>
-                            <div class="col-md-11 jl-journal-list-item-detail">
+                            <div class="col-md-12 jl-journal-list-item-detail">
                                 <div style="padding:15px">
+                                    <strong>王监国</strong>
                                     <label><strong>2个小时前</strong>在现场说:</label>
                                     <label style="float: right">前期准备</label>
                                     <p>厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫
@@ -140,27 +214,14 @@
                                     <img src="/images/img-baike-list-item.png"/>
                                     <img src="/images/img-baike-list-item.png"/>
                                 </div>
-                                <div class="jl-journal-list-item-footer">
-                                    <label>竹海水韵春风里</label>
-                                    <label>123平米,三室一厅</label>
-                                    <label>水电阶段</label>
-                                    <label>半包</label>
-                                    <label><a href="/pages/journal/detail.html">工程详情&gt;&gt;</a></label>
-                                </div>
                             </div>
                         </div>
-
                     </li>
                     <li>
                         <div class="row jl-journal-list-item">
-                            <div class="col-md-1 jl-journal-list-item-employer">
-                                <img src="/images/icon-01.png"/>
-                                <p>王建国</p>
-                                <p>4级监理</p>
-                                <img src="/images/vertical-line.png"/>
-                            </div>
-                            <div class="col-md-11 jl-journal-list-item-detail">
+                            <div class="col-md-12 jl-journal-list-item-detail">
                                 <div style="padding:15px">
+                                    <strong>王监国</strong>
                                     <label><strong>2个小时前</strong>在现场说:</label>
                                     <label style="float: right">前期准备</label>
                                     <p>厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫
@@ -170,27 +231,14 @@
                                     <img src="/images/img-baike-list-item.png"/>
                                     <img src="/images/img-baike-list-item.png"/>
                                 </div>
-                                <div class="jl-journal-list-item-footer">
-                                    <label>竹海水韵春风里</label>
-                                    <label>123平米,三室一厅</label>
-                                    <label>水电阶段</label>
-                                    <label>半包</label>
-                                    <label><a href="/pages/journal/detail.html">工程详情&gt;&gt;</a></label>
-                                </div>
                             </div>
                         </div>
-
                     </li>
                     <li>
                         <div class="row jl-journal-list-item">
-                            <div class="col-md-1 jl-journal-list-item-employer">
-                                <img src="/images/icon-01.png"/>
-                                <p>王建国</p>
-                                <p>4级监理</p>
-                                <img src="/images/vertical-line.png"/>
-                            </div>
-                            <div class="col-md-11 jl-journal-list-item-detail">
+                            <div class="col-md-12 jl-journal-list-item-detail">
                                 <div style="padding:15px">
+                                    <strong>王监国</strong>
                                     <label><strong>2个小时前</strong>在现场说:</label>
                                     <label style="float: right">前期准备</label>
                                     <p>厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫
@@ -200,27 +248,14 @@
                                     <img src="/images/img-baike-list-item.png"/>
                                     <img src="/images/img-baike-list-item.png"/>
                                 </div>
-                                <div class="jl-journal-list-item-footer">
-                                    <label>竹海水韵春风里</label>
-                                    <label>123平米,三室一厅</label>
-                                    <label>水电阶段</label>
-                                    <label>半包</label>
-                                    <label><a href="/pages/journal/detail.html">工程详情&gt;&gt;</a></label>
-                                </div>
                             </div>
                         </div>
-
                     </li>
                     <li>
                         <div class="row jl-journal-list-item">
-                            <div class="col-md-1 jl-journal-list-item-employer">
-                                <img src="/images/icon-01.png"/>
-                                <p>王建国</p>
-                                <p>4级监理</p>
-                                <img src="/images/vertical-line.png"/>
-                            </div>
-                            <div class="col-md-11 jl-journal-list-item-detail">
+                            <div class="col-md-12 jl-journal-list-item-detail">
                                 <div style="padding:15px">
+                                    <strong>王监国</strong>
                                     <label><strong>2个小时前</strong>在现场说:</label>
                                     <label style="float: right">前期准备</label>
                                     <p>厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫
@@ -230,47 +265,10 @@
                                     <img src="/images/img-baike-list-item.png"/>
                                     <img src="/images/img-baike-list-item.png"/>
                                 </div>
-                                <div class="jl-journal-list-item-footer">
-                                    <label>竹海水韵春风里</label>
-                                    <label>123平米,三室一厅</label>
-                                    <label>水电阶段</label>
-                                    <label>半包</label>
-                                    <label><a href="/pages/journal/detail.html">工程详情&gt;&gt;</a></label>
-                                </div>
                             </div>
                         </div>
-
                     </li>
-                    <li>
-                        <div class="row jl-journal-list-item">
-                            <div class="col-md-1 jl-journal-list-item-employer">
-                                <img src="/images/icon-01.png"/>
-                                <p>王建国</p>
-                                <p>4级监理</p>
-                                <img src="/images/vertical-line.png"/>
-                            </div>
-                            <div class="col-md-11 jl-journal-list-item-detail">
-                                <div style="padding:15px">
-                                    <label><strong>2个小时前</strong>在现场说:</label>
-                                    <label style="float: right">前期准备</label>
-                                    <p>厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫
-                                        生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨炒熟了大小生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨房卫生间和空调厨炒熟了大小</p>
-                                    <img src="/images/img-baike-list-item.png"/>
-                                    <img src="/images/img-baike-list-item.png"/>
-                                    <img src="/images/img-baike-list-item.png"/>
-                                    <img src="/images/img-baike-list-item.png"/>
-                                </div>
-                                <div class="jl-journal-list-item-footer">
-                                    <label>竹海水韵春风里</label>
-                                    <label>123平米,三室一厅</label>
-                                    <label>水电阶段</label>
-                                    <label>半包</label>
-                                    <label><a href="/pages/journal/detail.html">工程详情&gt;&gt;</a></label>
-                                </div>
-                            </div>
-                        </div>
 
-                    </li>
                 </ul>
             </div>
         </div>
@@ -301,50 +299,13 @@
             </div>
         </div>
     </div>
-    <div class="col-md-3 jl-recommend-journal-list">
-        <p>经典案例</p>
-        <ul>
-            <li class="jl-recommend-journal-item">
-                <img src="/images/img-baike-list-item.png">
-                <div class="jl-recommend-journal-item-middle">
-                    <p><strong>竹海水韵14撞</strong></p>
-                    <p>王建国</p>
-                </div>
-                <a data-trigger="hover" data-placement="top"
-                   title="" data-content="fa-arrow-circle-o-right" class="fancybox" data-original-title="">
-                    <i class="fa fa-arrow-circle-o-right"></i></a>
-            </li>
-            <li class="jl-recommend-journal-item">
-                <img src="/images/img-baike-list-item.png">
-                <div class="jl-recommend-journal-item-middle">
-                    <p><strong>竹海水韵14撞</strong></p>
-                    <p>王建国</p>
-                </div>
-                <a data-trigger="hover" data-placement="top"
-                   title="" data-content="fa-arrow-circle-o-right" class="fancybox" data-original-title="">
-                    <i class="fa fa-arrow-circle-o-right"></i></a>
-            </li>
-            <li class="jl-recommend-journal-item">
-                <img src="/images/img-baike-list-item.png">
-                <div class="jl-recommend-journal-item-middle">
-                    <p><strong>竹海水韵14撞</strong></p>
-                    <p>王建国</p>
-                </div>
-                <a data-trigger="hover" data-placement="top"
-                   title="" data-content="fa-arrow-circle-o-right" class="fancybox" data-original-title="">
-                    <i class="fa fa-arrow-circle-o-right"></i></a>
-            </li>
-            <li class="jl-recommend-journal-item">
-                <img src="/images/img-baike-list-item.png">
-                <div class="jl-recommend-journal-item-middle">
-                    <p><strong>竹海水韵14撞</strong></p>
-                    <p>王建国</p>
-                </div>
-                <a data-trigger="hover" data-placement="top"
-                   title="" data-content="fa-arrow-circle-o-right" class="fancybox" data-original-title="">
-                    <i class="fa fa-arrow-circle-o-right"></i></a>
-            </li>
-        </ul>
+    <div class="col-md-3 datepicker-container">
+        <div class="datepicker-header">
+            <h6>监理巡查日记</h6>
+        </div>
+        <div class="datepicker datepicker-inline">
+        </div>
+
     </div>
 </div>
 
@@ -370,6 +331,7 @@
     </div>
 </div>
 </div>
+
 
 <script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
 <script src="//cdn.bootcss.com/bootbox.js/4.4.0/bootbox.js"></script>
@@ -421,6 +383,10 @@
 
     }
 </script>
+
+<script src="http://cdn.bootcss.com/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-datepicker/1.6.1/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+<script src="/js/journal.js"></script>
 
 </body>
 </html>

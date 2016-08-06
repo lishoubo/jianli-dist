@@ -59,6 +59,30 @@ body {
   width: 83px;
   height: 20px;
 }
+@media (min-device-width: 544px) {
+  .footer {
+    display: block;
+  }
+}
+@media (max-device-width: 544px) {
+  .footer {
+    display: none;
+  }
+}
+.footer {
+  height: 50px;
+  background-color: black;
+  color: #8b8b8b;
+  font-size: smaller;
+  text-align: center;
+  padding-top: 20px;
+}
+.footer div {
+  display: inline-block;
+}
+.footer label {
+  color: #8b8b8b;
+}
 /*百科list页面筛选项*/
 .jl-journal-filter {
   position: relative;
@@ -165,9 +189,13 @@ body {
   border: 0;
   float: right;
 }
+.jl-journal-list-item-footer a {
+  color: white;
+}
 /*热门百科*/
 .jl-recommend-journal-list {
   padding-right: 0;
+  padding-top: 8px;
 }
 .jl-recommend-journal-list ul {
   padding: 0;

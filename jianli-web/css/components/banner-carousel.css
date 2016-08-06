@@ -1,3 +1,11 @@
 .jl-carousel-img {
   height: 405px;
 }
+.carousel-indicators {
+  bottom: 0px;
+}
+@media (min-width: 544px) {
+  .carousel-indicators {
+    bottom: 0px;
+  }
+}

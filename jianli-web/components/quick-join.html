@@ -1,0 +1,29 @@
+<div id="quick_join">
+    <h6>快速预约监理</h6>
+    <img src="/images/hr-line.png" style="width: 100%; margin: 10px 0 0 0">
+    <div style="padding: 6px 12px; text-align: left">
+        <p><span>无需注册,立即报名</span></p>
+        <p><span>已有<span class="big">{{applyNum}}</span>位用户报名</span></p>
+        <input type="text" class="form-control quick-join-item" v-model="applyForm.area" placeholder="房屋面积(平方米)">
+        <div class="input-group quick-join-item">
+            <input type="text" class="form-control" v-model="applyForm.address.location" placeholder="小区地址">
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">{{applyForm.address.district}} <span
+                        class="caret"></span></button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><p v-on:click="choose_district">余杭区</p></li>
+                    <li><p v-on:click="choose_district">拱墅区</p></li>
+                    <li><p v-on:click="choose_district">滨江区</p></li>
+                    <li><p v-on:click="choose_district">上城区</p></li>
+                    <li><p v-on:click="choose_district">下城区</p></li>
+                </ul>
+            </div>
+        </div>
+        <input type="text" class="form-control quick-join-item" v-model="applyForm.userName" placeholder="您的姓名">
+        <input type="text" class="form-control quick-join-item" v-model="applyForm.mobile" placeholder="手机号">
+        <button class="btn btn-default form-control quick-join-item" style="background-color: darkgray"
+                v-on:click="quick_join">马上预约
+        </button>
+    </div>
+</div>

@@ -156,7 +156,7 @@
     </div>
 </div>
 
-<div class="row jl-service-intro" style="background-color: white;">
+<div class="row jl-service-intro" style="height: 500px; background-color: white;padding-top: 60px">
     <div class="col-md-5 col-md-offset-1">
         <article>
             <div class="i-title">
@@ -170,13 +170,13 @@
             </p>
         </article>
     </div>
-    <div class="col-md-6 jl-service-intro-img">
+    <div class="col-md-6">
         <section>
             <img src="/images/service-intro-01.png"/>
         </section>
     </div>
 </div>
-<div class="row jl-process-container" style="height: 526px;padding-top: 40px;background-color: #656565">
+<div class="row" style="height: 526px;padding-top: 40px;background-color: #656565">
     <div class="col-md-12">
         <h3 style="color: white; width:175px;display: block;margin: 0 auto;">监理服务流程</h3>
     </div>
@@ -321,7 +321,44 @@
     </div>
 </div>
 
-<div class="row jl-team-container" style="height: 490px; background-color: #656565;">
+<div class="row" style="height: 820px; padding-top: 40px;background-color: white;">
+    <div class="col-md-12">
+        <div style="text-align: center">
+            <div>
+                <img src="/images/line-01.png" style="padding-top:14px;vertical-align: top">
+                <h3 style="display:inline;position: relative; padding: 10px">经典监理案例</h3>
+                <img src="/images/line-01.png" style="padding-top:14px;vertical-align: top">
+            </div>
+            <div>
+                <p style="margin-top: 20px; color: #aaaaaa">展示我们的现场监理工作</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-11 col-md-offset-1" style="margin-top: 30px">
+        <div class="jl-example" id="jl-example">
+    <ul>
+        <li v-for="item in items">
+            <div class="jl-example-item">
+                <img src="{{item.cover}}"/>
+                <div class="jl-engineer-container">
+                    <img class="jl-engineer-pic" src="{{item.staff.photo}}"/>
+                    <p>
+                        <span style="font-size: 90%">{{item.staff.name}}</span>
+                    </p>
+                </div>
+                <div class="jl-client-house">
+                    <span>{{item.building.address.district}}</span>
+                    <span>117平凡</span>
+                    <span>3居室</span>
+                </div>
+            </div>
+        </li>
+
+</div>
+    </div>
+</div>
+
+<div class="row" style="height: 490px; background-color: #656565;">
     <div class="col-md-12">
         <div class="jl-team-top text-center" >
             <div class="jl-team-top-img">

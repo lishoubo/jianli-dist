@@ -1,9 +1,20 @@
+@media (min-device-width: 544px) {
+  .footer {
+    display: block;
+  }
+}
+@media (max-device-width: 544px) {
+  .footer {
+    display: none;
+  }
+}
 .footer {
   height: 50px;
   background-color: black;
   color: #8b8b8b;
   font-size: smaller;
   text-align: center;
+  padding-top: 20px;
 }
 .footer div {
   display: inline-block;

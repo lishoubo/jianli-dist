@@ -1,0 +1,20 @@
+<div class="jl-example" id="jl-example">
+    <ul>
+        <li v-for="item in items">
+            <div class="jl-example-item">
+                <img src="{{item.cover}}"/>
+                <div class="jl-engineer-container">
+                    <img class="jl-engineer-pic" src="{{item.staff.photo}}"/>
+                    <p>
+                        <span style="font-size: 90%">{{item.staff.name}}</span>
+                    </p>
+                </div>
+                <div class="jl-client-house">
+                    <span>{{item.building.address.district}}</span>
+                    <span>117平凡</span>
+                    <span>3居室</span>
+                </div>
+            </div>
+        </li>
+
+</div>

@@ -20,16 +20,15 @@
 
     <div class="col-md-2 col-md-offset-1">
         <div class="logo">
-            <a href="/" title="装小蜜家装监理-管家式家装监理服务"><img src="/images/logo.png"/></a>
+            <a href="/pages/index/index.html" title="装小蜜家装监理-管家式家装监理服务"><img src="/images/logo.png"/></a>
         </div>
     </div>
     <div class="col-md-6">
         <div class="navbar">
             <ul>
-                <li><a href="/pages/index/index.html">首页</a></li>
-                <li><a href="/pages/journal/journal.html">监理日志</a></li>
-                <li><a href="/pages/baike/baike.html">家装百科</a></li>
-                <li><a href="#about">关于我们</a></li>
+                <li><a path="index" href="/pages/index/index.html">首&nbsp;&nbsp;页</a></li>
+<!--                <li><a path="journal" href="/pages/journal/journal.html">现场监理</a></li>-->
+                <li><a path="team" href="">关于我们</a></li>
             </ul>
         </div>
     </div>
@@ -60,7 +59,7 @@
 
         var url = window.location;
         $('.navbar a').filter(function () {
-            return this.href == url || url.href.indexOf(this.href) == 0;
+            return url.href.indexOf(this.getAttribute("path")) >= 0;
         }).addClass('active');
     })
 </script>
@@ -360,14 +359,17 @@
     Vue.mixin({
         methods: {
             _api_host: function () {
-                return "http://localhost:8080";
+//                return "http://localhost:8080";
+                return "";
             },
             _post: function (api, data, success_callback, error_callback) {
                 var self = this;
                 $.ajax({
                     method: 'post',
                     url: self._api_host() + api,
-                    data: data,
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
                     success: success_callback,
                     error: error_callback
                 })

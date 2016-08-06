@@ -1,3 +1,13 @@
+@media (min-width: 544px) {
+  #quick_nav {
+    display: block;
+  }
+}
+@media (max-width: 544px) {
+  #quick_nav {
+    display: none;
+  }
+}
 #quick_nav {
   position: fixed;
   left: 5px;
