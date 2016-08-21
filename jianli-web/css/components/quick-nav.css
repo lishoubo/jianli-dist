@@ -22,9 +22,10 @@
   height: 28px;
   text-align: center;
 }
-#quick_nav .qq .icon {
+#quick_nav .qq {
   width: 28px;
   height: 28px;
+  margin-left: -25px;
 }
 #quick_nav .weixin .icon {
   width: 24px;

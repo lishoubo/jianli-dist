@@ -79,6 +79,7 @@ body {
 }
 .footer div {
   display: inline-block;
+  margin: 0px 10px;
 }
 .footer label {
   color: #8b8b8b;

@@ -12,18 +12,18 @@
 }
 #quick_join {
   position: absolute;
-  top: 10px;
-  height: 380px;
+  top: 30px;
+  height: 420px;
   background-color: whitesmoke;
   opacity: 0.8;
-  filter: alpha(opacity=80);
+  filter: alpha(opacity=75);
   text-align: center;
-  padding: 20px 0 10px 0;
+  padding: 30px 0 20px 0;
 }
 #quick_join p {
   margin: 8px 0;
   padding: 4px;
-  font-size: smaller;
+  font-size: small;
   color: grey;
 }
 #quick_join .dropdown-menu p:hover {
